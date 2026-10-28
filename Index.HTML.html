@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FixNear – Neighborhood Home Repair Booking</title>
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header>
+  <div class="nav">
+    <div class="logo">Fix<span>Near</span></div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#rates">Rate Card</a>
+      <a href="#team">Technicians</a>
+      <a href="#book">Book Now</a>
+      <a href="#mybookings">My Bookings</a>
+      <a href="#reviews">Reviews</a>
+      <a href="login.html" id="loginLink" class="login-btn">Login</a>
+      <span id="welcomeUser" class="welcome" hidden></span>
+      <a href="#" id="logoutLink" hidden>Logout</a>
+
+    </nav>
+  </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<div class="hero">
+  <h1>Electricians, Plumbers &amp; Home Repair Experts in Your Neighborhood</h1>
+  <p>Pick a service, see the price upfront, and book a visit in under a minute. No hidden charges.</p>
+  <a class="btn" href="#book">Book a Technician</a>
+</div>
+
+<!-- ==================== SERVICES ==================== -->
+<section id="services">
+  <h2>Our Services</h2>
+  <p class="sub">Click a service to select it for booking, or search below.</p>
+  <input id="searchBox" class="search" type="search" placeholder="Search a service, e.g. tap, lock, fan, door...">
+
+  <div class="grid" id="serviceGrid">
+
+    <div class="card service" data-service="electrical" tabindex="0" role="button">
+      <div class="icon">💡</div>
+      <h3>Electrical Repairs</h3>
+      <p>Wiring, switches, fans, MCB and short-circuit faults.</p>
+      <div class="from">Inspection from ₹199</div>
+    </div>
+
+    <div class="card service" data-service="plumbing" tabindex="0" role="button">
+      <div class="icon">🚰</div>
+      <h3>Plumbing Leaks</h3>
+      <p>Tap, pipe, flush tank and bathroom leakage fixes.</p>
+      <div class="from">Inspection from ₹249</div>
+    </div>
+
+    <div class="card service" data-service="carpentry" tabindex="0" role="button">
+      <div class="icon">🪚</div>
+      <h3>Carpentry</h3>
+      <p>Door, window, furniture and cupboard repairs.</p>
+      <div class="from">Inspection from ₹249</div>
+    </div>
+
+    <div class="card service" data-service="locksmith" tabindex="0" role="button">
+      <div class="icon">🔑</div>
+      <h3>Locksmith Services</h3>
+      <p>Lock repair, replacement and emergency opening.</p>
+      <div class="from">Inspection from ₹149</div>
+    </div>
+
+  </div>
+  <p class="empty" id="noResult" hidden>No service matches your search.</p>
+</section>
+
+<!-- ==================== RATE CARD ==================== -->
+<section id="rates">
+  <h2>Standard Rate Card</h2>
+  <p class="sub">Inspection charges and repair fee estimates, shown before you book.</p>
+
+  <p class="rate-intro">
+    At FixNear, you always know the price before the technician arrives. Every visit has two parts:
+    a fixed <b>inspection charge</b> (the technician checks the problem and tells you the exact work needed)
+    and a <b>repair fee</b> (charged only if you approve the work). The prices below are our standard
+    "starting from" rates for common jobs.
+  </p>
+
+  <div class="rate-grid">
+
+    <div class="rate-box">
+      <div class="rate-head" style="background-color:#2f6db5;">
+        <span class="rate-icon">💡</span>
+        <h3>Electrical Repairs</h3>
+      </div>
+      <div class="rate-insp">Inspection Charge: <b>₹199</b></div>
+      <ul class="rate-list">
+        <li><span>Switch / socket replacement</span><b>₹150</b></li>
+        <li><span>Fan repair / installation</span><b>₹300</b></li>
+        <li><span>MCB / wiring fault fix</span><b>₹600</b></li>
+        <li><span>Short-circuit inspection &amp; repair</span><b>₹450</b></li>
+      </ul>
+      <a class="rate-btn" href="#book">Book Electrical</a>
+    </div>
+
+    <div class="rate-box">
+      <div class="rate-head" style="background-color:#1a9a8a;">
+        <span class="rate-icon">🚰</span>
+        <h3>Plumbing Leaks</h3>
+      </div>
+      <div class="rate-insp">Inspection Charge: <b>₹249</b></div>
+      <ul class="rate-list">
+        <li><span>Tap repair / replacement</span><b>₹200</b></li>
+        <li><span>Pipe leakage repair</span><b>₹500</b></li>
+        <li><span>Flush tank fix</span><b>₹450</b></li>
+        <li><span>Overhead tank / motor line fix</span><b>₹700</b></li>
+      </ul>
+      <a class="rate-btn" href="#book">Book Plumbing</a>
+    </div>
+
+    <div class="rate-box">
+      <div class="rate-head" style="background-color:#c9762b;">
+        <span class="rate-icon">🪚</span>
+        <h3>Carpentry</h3>
+      </div>
+      <div class="rate-insp">Inspection Charge: <b>₹249</b></div>
+      <ul class="rate-list">
+        <li><span>Door hinge / handle fix</span><b>₹250</b></li>
+        <li><span>Door or window alignment</span><b>₹500</b></li>
+        <li><span>Furniture / cupboard repair</span><b>₹900</b></li>
+        <li><span>Lock fitting on wooden door</span><b>₹350</b></li>
+      </ul>
+      <a class="rate-btn" href="#book">Book Carpentry</a>
+    </div>
+
+    <div class="rate-box">
+      <div class="rate-head" style="background-color:#7a4fc2;">
+        <span class="rate-icon">🔑</span>
+        <h3>Locksmith Services</h3>
+      </div>
+      <div class="rate-insp">Inspection Charge: <b>₹149</b></div>
+      <ul class="rate-list">
+        <li><span>Key duplication</span><b>₹100</b></li>
+        <li><span>Lock repair / replacement</span><b>₹350</b></li>
+        <li><span>Emergency door opening</span><b>₹600</b></li>
+        <li><span>Almirah / cupboard lock change</span><b>₹400</b></li>
+      </ul>
+      <a class="rate-btn" href="#book">Book Locksmith</a>
+    </div>
+
+  </div>
+
+  <div class="rate-terms">
+    <h3>📋 Terms &amp; Conditions</h3>
+    <ul>
+      <li>The inspection charge is adjusted in the final bill if you approve the repair.</li>
+      <li>If you do not approve the repair, only the inspection charge is payable.</li>
+      <li>Repair fees shown are "starting from" prices. The technician confirms the final price before starting work.</li>
+      <li>Spare parts and materials are charged extra at actual cost, with a bill.</li>
+      <li>Emergency or late-night visits (after 9 PM) have an extra charge of ₹150.</li>
+      <li>All repairs come with a 7-day service warranty.</li>
+      <li>Prices are in Indian Rupees (₹) and may change without prior notice.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== TECHNICIANS ==================== -->
+<section id="team">
+  <h2>Meet Our Technicians</h2>
+  <p class="sub">Verified professionals working in your neighborhood.</p>
+
+  <div class="grid">
+
+    <div class="card tech">
+      <div class="avatar">R</div>
+      <h3>Ramesh Kumar</h3>
+      <p><b>Electrician</b> • 8 years experience</p>
+      <p>Languages: Hindi, Punjabi</p>
+      <p>Service area: Phagwara &amp; nearby</p>
+      <p>Completed: 350+ jobs</p>
+      <p>Phone: 98XXXXXX01</p>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="card tech">
+      <div class="avatar">A</div>
+      <h3>Amit Sharma</h3>
+      <p><b>Electrician</b> • 5 years experience</p>
+      <p>Languages: Hindi, English</p>
+      <p>Service area: Model Town area</p>
+      <p>Completed: 200+ jobs</p>
+      <p>Phone: 98XXXXXX02</p>
+      <div class="stars">★★★★☆</div>
+    </div>
+
+    <div class="card tech">
+      <div class="avatar">I</div>
+      <h3>Imran Khan</h3>
+      <p><b>Plumber</b> • 6 years experience</p>
+      <p>Languages: Hindi, Urdu</p>
+      <p>Service area: City Centre area</p>
+      <p>Completed: 280+ jobs</p>
+      <p>Phone: 98XXXXXX03</p>
+      <div class="stars">★★★★☆</div>
+    </div>
+
+    <div class="card tech">
+      <div class="avatar">G</div>
+      <h3>Gurpreet Singh</h3>
+      <p><b>Plumber</b> • 9 years experience</p>
+      <p>Languages: Punjabi, Hindi</p>
+      <p>Service area: Civil Lines area</p>
+      <p>Completed: 400+ jobs</p>
+      <p>Phone: 98XXXXXX04</p>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="card tech">
+      <div class="avatar">S</div>
+      <h3>Suresh Meena</h3>
+      <p><b>Carpenter</b> • 10 years experience</p>
+      <p>Languages: Hindi</p>
+      <p>Service area: Old Town area</p>
+      <p>Completed: 320+ jobs</p>
+      <p>Phone: 98XXXXXX05</p>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="card tech">
+      <div class="avatar">V</div>
+      <h3>Vikram Singh</h3>
+      <p><b>Locksmith</b> • 5 years experience</p>
+      <p>Languages: Hindi, Punjabi, English</p>
+      <p>Service area: All areas (24x7)</p>
+      <p>Completed: 250+ jobs</p>
+      <p>Phone: 98XXXXXX06</p>
+      <div class="stars">★★★★☆</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== BOOKING FORM ==================== -->
+<section id="book">
+  <h2>Book a Visit</h2>
+  <p class="sub">Fill in your details. The estimate updates automatically.</p>
+
+  <div class="formbox">
+    <div class="field">
+      <label for="name">Full name</label>
+      <input id="name" type="text" placeholder="e.g. Rahul Sharma">
+      <div class="err" id="eName"></div>
+    </div>
+
+    <div class="field">
+      <label for="phone">Mobile number</label>
+      <input id="phone" type="tel" placeholder="10-digit number" maxlength="10">
+      <div class="err" id="ePhone"></div>
+    </div>
+
+    <div class="field">
+      <label for="service">Service</label>
+      <!-- Prices used for the estimate are stored in data-inspection, data-min and data-max.
+           Change them here if you change the rate card. -->
+      <select id="service">
+        <option value="electrical" data-inspection="199" data-min="299" data-max="899">Electrical Repairs</option>
+        <option value="plumbing"   data-inspection="249" data-min="349" data-max="1199">Plumbing Leaks</option>
+        <option value="carpentry"  data-inspection="249" data-min="399" data-max="1499">Carpentry</option>
+        <option value="locksmith"  data-inspection="149" data-min="249" data-max="999">Locksmith Services</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="job">Job size</label>
+      <select id="job">
+        <option value="min">Minor (quick fix)</option>
+        <option value="max">Major (bigger repair)</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="date">Preferred date</label>
+      <input id="date" type="date">
+      <div class="err" id="eDate"></div>
+    </div>
+
+    <div class="field">
+      <label for="slot">Time slot</label>
+      <select id="slot">
+        <option>9 AM – 12 PM</option>
+        <option>12 PM – 3 PM</option>
+        <option>3 PM – 6 PM</option>
+        <option>6 PM – 9 PM</option>
+      </select>
+    </div>
+
+    <div class="field full">
+      <label for="address">Address</label>
+      <textarea id="address" rows="2" placeholder="House no., street, area"></textarea>
+      <div class="err" id="eAddress"></div>
+    </div>
+
+    <div class="field full">
+      <div class="estimate" id="estimate"></div>
+    </div>
+
+    <div class="field full">
+      <button class="btn" id="bookBtn" type="button">Confirm Booking</button>
+    </div>
+  </div>
+
+  <div class="msg" id="msg" role="status"></div>
+</section>
+
+<!-- ==================== MY BOOKINGS ==================== -->
+<section id="mybookings">
+  <h2>My Bookings</h2>
+  <p class="sub">Your confirmed visits appear here.</p>
+  <div id="bookingList"></div>
+</section>
+
+<!-- ==================== REVIEWS ==================== -->
+<section id="reviews">
+  <h2>Customer Reviews</h2>
+  <p class="sub" id="avgRating"></p>
+
+  <!-- data-stars is the rating number used to work out the average -->
+  <div class="grid" id="reviewList">
+
+    <div class="card" data-stars="5">
+      <div class="stars">★★★★★</div>
+      <p>"Electrician came on time and fixed the fan quickly. Price matched the rate card."</p>
+      <h3>– Anita Joshi</h3>
+    </div>
+
+    <div class="card" data-stars="4">
+      <div class="stars">★★★★☆</div>
+      <p>"Leaking tap fixed within an hour. Good work, no hidden charges."</p>
+      <h3>– Mohit Verma</h3>
+    </div>
+
+    <div class="card" data-stars="5">
+      <div class="stars">★★★★★</div>
+      <p>"Locksmith opened our stuck door politely and cheaply."</p>
+      <h3>– Pooja Rathore</h3>
+    </div>
+
+  </div>
+
+  <h3 class="mt">Write a review</h3>
+  <div class="formbox">
+    <div class="field">
+      <label for="rName">Your name</label>
+      <input id="rName" type="text" placeholder="Your name">
+    </div>
+
+    <div class="field">
+      <label for="rStars">Rating</label>
+      <select id="rStars">
+        <option value="5">★★★★★ (5)</option>
+        <option value="4">★★★★☆ (4)</option>
+        <option value="3">★★★☆☆ (3)</option>
+        <option value="2">★★☆☆☆ (2)</option>
+        <option value="1">★☆☆☆☆ (1)</option>
+      </select>
+    </div>
+
+    <div class="field full">
+      <label for="rText">Your review</label>
+      <textarea id="rText" rows="2" placeholder="How was the service?"></textarea>
+      <div class="err" id="eReview"></div>
+    </div>
+
+    <div class="field full">
+      <button class="btn" id="reviewBtn" type="button">Submit Review</button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>FixNear – B.Tech 1st Year Web Project &copy; 2026</footer>
+
+<script src="booking.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login – FixNear</title>
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Fix<span>Near</span></div>
+    <nav>
+      <a href="Index.HTML.html"> Back to Home</a>
+    </nav>
+  </div>
+</header>
+
+<div class="auth-wrap">
+  <div class="auth-box">
+
+    <h2 class="auth-title">Welcome to FixNear</h2>
+    <p class="auth-sub">Login or create an account to book a technician.</p>
+
+    <!-- Tabs -->
+    <div class="auth-tabs">
+      <button type="button" id="tabLogin" class="active">Login</button>
+      <button type="button" id="tabSignup">Sign Up</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm" class="auth-form">
+      <div class="field">
+        <label for="loginId">Email or mobile number</label>
+        <input id="loginId" type="text" placeholder="e.g. rahul@gmail.com or 9876543210">
+      </div>
+      <div class="field">
+        <label for="loginPass">Password</label>
+        <input id="loginPass" type="password" placeholder="Enter your password">
+      </div>
+      <label class="check"><input type="checkbox" id="showLoginPass"> Show password</label>
+      <div class="auth-msg" id="loginMsg"></div>
+      <button class="btn auth-btn" type="submit">Login</button>
+      <p class="auth-switch">New here? <a href="#" id="goSignup">Create an account</a></p>
+    </form>
+
+    <!-- SIGN UP FORM -->
+    <form id="signupForm" class="auth-form" hidden>
+      <div class="field">
+        <label for="suName">Full name</label>
+        <input id="suName" type="text" placeholder="e.g. Rahul Sharma">
+      </div>
+      <div class="field">
+        <label for="suPhone">Mobile number</label>
+        <input id="suPhone" type="tel" maxlength="10" placeholder="10-digit number">
+      </div>
+      <div class="field">
+        <label for="suEmail">Email</label>
+        <input id="suEmail" type="email" placeholder="e.g. rahul@gmail.com">
+      </div>
+      <div class="field">
+        <label for="suPass">Password</label>
+        <input id="suPass" type="password" placeholder="At least 6 characters">
+      </div>
+      <div class="field">
+        <label for="suPass2">Confirm password</label>
+        <input id="suPass2" type="password" placeholder="Type the password again">
+      </div>
+      <label class="check"><input type="checkbox" id="showSignupPass"> Show password</label>
+      <div class="auth-msg" id="signupMsg"></div>
+      <button class="btn auth-btn" type="submit">Create Account</button>
+      <p class="auth-switch">Already have an account? <a href="#" id="goLogin">Login</a></p>
+    </form>
+
+  </div>
+</div>
+
+<footer>FixNear – B.Tech 1st Year Web Project &copy; 2026</footer>
+
+<script src="login.js"></script>
+</body>
+</html>
